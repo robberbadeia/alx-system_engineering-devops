@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -type f -regex '[A-Z]*' -exex mv '{}' /tmp/u
+find ./ -type f -regex '^[0-9]' -exex mv '{}' /tmp/u
