@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -laR | find "$dir" -size 0 | cut -d " " -f "8"
+find . -empty -printf "%f\n"
