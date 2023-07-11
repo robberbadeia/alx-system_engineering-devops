@@ -1,0 +1,3 @@
+#!/bin/bash
+echo `expr $x + 5`
+
