@@ -1,3 +1,2 @@
 #!/bin/bash
-echo `expr $x + 5`
-
+echo `expr $TRUEKNOWLEDGE+128
