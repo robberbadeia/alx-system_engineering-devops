@@ -2,11 +2,16 @@
 # Write a Bash script that gives you information about the school file.
 
 file="school"
-for file in *
-do
-	if [ -e "$file" ];then
-		echo "school file exists"
-	else
-		echo "school file exists"
-	fi
-done
+if [ -e "$file" ];then
+	echo "school file exists"
+	if [ -s "$file" ]; then
+		echo "$file file is not empty"
+    else
+		echo "$file file is empty"
+    fi
+    if [ -f "$file" ]; then
+		echo "$file is a regular file"
+    fi
+else
+	echo "school file exists"
+fi
