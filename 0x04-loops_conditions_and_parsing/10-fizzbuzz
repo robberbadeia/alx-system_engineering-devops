@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 #FizzBuzz
 
-for (( i=1; i < 100; i++ ))
+for num in {1..100}
 do
-    if (( i % 15 == 0 )); then
-		echo "FizzBuzz"
-    elif (( i % 3 == 0 )); then
-		echo "Fizz"
-    elif (( i % 5 == 0 )); then
-		echo "Buzz"
-    else
-		echo "$i"
-    fi
+  if (( num % 3 == 0 && num % 5 == 0 ))
+  then
+    echo "FizzBuzz"
+  elif (( num % 3 == 0 ))
+  then
+    echo "Fizz"
+  elif (( num % 5 == 0 ))
+  then
+    echo "Buzz"
+  else
+    echo "$num"
+  fi
 done
