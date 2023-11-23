@@ -8,11 +8,12 @@ do
 		echo "school file exists"
 		if [ -s "$file" ];then
 			echo "school file is not empty"
+			if [ -f "$file" ];then
+				echo "school is a regular file"
+			fi
+		fi
 		else
 			echo "school file is empty"
-		fi
-		if [ -f "$file" ];then
-			echo "school is a regular file"
 		fi
 	else
 		echo "school file exists"
