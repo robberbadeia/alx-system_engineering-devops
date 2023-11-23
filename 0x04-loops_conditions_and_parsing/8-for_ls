@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# List the content of dir in list form
+
+for file in *
+do
+	echo "$file"
+done
