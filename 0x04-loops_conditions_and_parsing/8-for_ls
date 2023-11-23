@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# List the content of dir in list form
+# List the content of dir in list form "LS implementation"
 
 for file in *
 do
-	echo "$file"
+	echo "$file" | cut -d "-" -f 2
 done
