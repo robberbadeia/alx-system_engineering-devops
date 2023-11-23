@@ -3,8 +3,8 @@
 # @line 9 print "HI"
 
 i=1
-while [ $i -le 10 ];do
-	if [ $i -eq 9 ];then
+while [ "$i" -le 10 ];do
+	if [ "$i" == 9 ];then
 		echo "HI"
 	else
 		echo "Best School"
