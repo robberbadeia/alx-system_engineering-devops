@@ -7,7 +7,7 @@ pgrep -f 100-process_and_pid_file >> /var/run/myscript.pid
 function trigger_sigtrem ()
 {
   rm ./var/run/myscript.pid
-  kill -9 "$(pgrep -f 100-process_and_pid_file)"
+  exit
 }
 
 while true
