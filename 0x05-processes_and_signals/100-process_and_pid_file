@@ -2,7 +2,7 @@
 #9. Process and PID file
 
 touch /var/run/myscript.pid
-echo "$(pgrep -f 100-process_and_pid_file)" >> /var/run/myscript.pid
+pgrep -f 100-process_and_pid_file >> /var/run/myscript.pid
 
 function trigger_sigtrem ()
 {
