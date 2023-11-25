@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#Write a Bash script that stops 4-to_infinity_and_beyond process.
+#8. Beheaded process
 
 kill -9 "$(pgrep -f 7-highlander)"

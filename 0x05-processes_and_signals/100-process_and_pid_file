@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#9. Process and PID file
+
+touch /var/run/myscript.pid
+echo "$(pgrep -f 100-process_and_pid_file)" >> /var/run/myscript.pid
+
+function trigger_sigtrem ()
+{
+  echo "I hate the kill command"
+  rm ./var/run/myscript.pid
+  kill -9 "$(pgrep -f 100-process_and_pid_file)"
+}
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'Y U no love me?!' SIGINT
+	trap trigger_sigtrem SIGTERM
+	trap trigger_sigtrem SIGQUIT
+done
