@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-#Find the regular expression that will match the above cases
+# Match "hbtn, hbttn, hbtttn, hbttttn" not "hbn"
 
 puts ARGV[0].scan(/hbt+n/).join
