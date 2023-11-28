@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(//).join
+# Find the regular expression that will match the above cases
+
+puts ARGV[0].scan(/hbt*n/).join
 #^hbt*n$
