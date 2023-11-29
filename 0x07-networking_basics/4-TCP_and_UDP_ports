@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Listening sockets
+sudo netstat -lp
