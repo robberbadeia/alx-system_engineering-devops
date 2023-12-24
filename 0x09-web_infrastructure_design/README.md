@@ -7,6 +7,8 @@ Project :
 
 # 1-distributed_web_infrastructure:
 
+![alt text](https://i.imgur.com/SP1wOCN.jpg)
+
 Active-Active High Availability Cluster :
 
 ![alt text](https://i.imgur.com/vUNqbNJ.jpg)
@@ -18,3 +20,7 @@ Active-Passive High Availability Cluster :
 MySQL Master-Slave Replication :
 
 ![alt text](https://i.imgur.com/jGGCrWQ.png)
+
+# 2-secured_and_monitored_web_infrastructure
+
+![alt text](https://i.imgur.com/x2wD79H.jpg)
