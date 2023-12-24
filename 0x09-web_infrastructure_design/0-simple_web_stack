@@ -1,0 +1,93 @@
+
+# What is a server ?
+
+A server is a hardware device or software that processes requests that sent over the network and replies to them .
+A client is the device that submits requests and waits for a response from the server 
+The computer system that accepts requests for online files and transmits those files to the client is referred to as a "SERVER" in the context of the internet.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What is the role of the domain name ?
+
+Domain names serve to identify Internet resources, such as computers, networks, and services, with a text-based label that is easier to memorize than the numerical addresses used in the Internet protocols.
+
+A domain name plays a crucial role in the online presence of an individual or organization. It is the unique address of a website or email address, and it is essential for branding, navigation, and search engine optimization (SEO). Your domain name should be easy to remember, relevant to your brand or business, and difficult for others to register. It also establishes a level of trust and credibility to your online reputation. Using a domain registrar or hosting provider, one can register and manage a domain name.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What type of DNS record www is in www.foobar.com ?
+
+The domain name system, or DNS, is a global system responsible for mapping human-readable hostnames to their corresponding Internet Protocol (IP) addresses.
+
+For example : 
+if you want to access a website using a domain name like example.com, that domain name must point to a valid IP address.
+
+The human-readable hostname is a string of words that are easy to remember. IP addresses (IPV4), on the other hand, contain numbers separated by dots and are harder to remember. 
+
+In our example above, example.com is the human-readable hostname or domain name, while 93.184.216.34 is the current IP address for example.com. 
+Also, note that the IP address associated with a domain name may change depending on the server hosting the website.
+
+Multiple components make up the domain name system, and DNS record types are an important part of the system. A DNS resolver does the actual work of finding the correct IP address for a hostname.
+
+What are DNS record types?
+-----------------------------
+
+DNS record types are records that provide important information about a hostname or domain. These records include the current IP address for a domain.
+Also, DNS records are stored in text files (zone files) on the authoritative DNS server.
+The content of a DNS record file is a string with special commands that the DNS server understands.
+
+DNS record types :
+------------------
+The following are the five major DNS record types:
+
+1- A record
+2- AAAA record
+3- CNAME record
+4- Nameserver (NS) record
+5- Mail exchange (MX) record
+
+
+
+
+
+
+
+![Alt text](dns_record.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+CNAME—or, in full, "canonical name"—is a DNS record that points a domain name (an alias) to another domain. In a CNAME record, the alias doesn't point to an IP address. And the domain name that the alias points to is the canonical name. For example, the subdomain ng.example.com can point to example.com using CNAME. Here example.com points to the actual IP address using an A record.
+
+Use of CNAME record
+A practical example for the use of CNAME records is running multiple subdomains for different purposes on the same server. For example, we can use ftp.example.com for file transfer protocol (FTP) and serve webpages via www.example.com. We can then use a CNAME record to point both subdomains to example.com. The main domain example.com then points to the server's IP address using an A record.
+
+It's also possible to point a CNAME to another CNAME. However, doing so is inefficient and can lead to slow load speed and poor user experience.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What is the role of the web server ?
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is the role of the application server
+What is the role of the database
+What is the server using to communicate with the computer of the user requesting the website
+
+
+
+SPOF
+Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+Cannot scale if too much incoming traffic
