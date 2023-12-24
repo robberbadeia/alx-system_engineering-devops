@@ -46,48 +46,103 @@ The following are the five major DNS record types:
 4- Nameserver (NS) record
 5- Mail exchange (MX) record
 
+1. A record
+The A record is the most important DNS record type. The "A" in A record stands for "address." An A record shows the IP address for a specific hostname or domain
+Use of a record :
+-----------------
+The main use of A record is for IP address lookup. Using an A record, a web browser is able to load a website using the domain name. As a result, we can access websites on the internet without knowing their IP addresses.
 
+2. AAAA record
+-----------------
+AAAA record, just like A record, point to the IP address for a domain. However, this DNS record type is different in the sense that it points to IPV6 addresses.
+Use of AAAA record :
+Usage of the AAAA record for DNS resolution has great potential because it uses IPV6, which is an improvement over IPV4. Also, as the internet keeps growing and we're running out of IPV4 addresses, the potential for AAAA records is high.
 
-
-
-
-
-![Alt text](https://img.site24x7static.com/images/dns_record.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
+3. CNAME record
+-----------------
 CNAME—or, in full, "canonical name"—is a DNS record that points a domain name (an alias) to another domain. In a CNAME record, the alias doesn't point to an IP address. And the domain name that the alias points to is the canonical name. For example, the subdomain ng.example.com can point to example.com using CNAME. Here example.com points to the actual IP address using an A record.
-
-Use of CNAME record
+Use of CNAME record :
 A practical example for the use of CNAME records is running multiple subdomains for different purposes on the same server. For example, we can use ftp.example.com for file transfer protocol (FTP) and serve webpages via www.example.com. We can then use a CNAME record to point both subdomains to example.com. The main domain example.com then points to the server's IP address using an A record.
 
-It's also possible to point a CNAME to another CNAME. However, doing so is inefficient and can lead to slow load speed and poor user experience.
+
+4. NS record
+-----------------
+A nameserver (NS) record specifies the authoritative DNS server for a domain. In other words, the NS record helps point to where internet applications like a web browser can find the IP address for a domain name. Usually, multiple nameservers are specified for a domain. For example, these could look like ns1.examplehostingprovider.com and ns2.examplehostingprovider.com.
+Use of NS record :
+If you've purchased a web hosting service or set up a simple website, you probably received an email with nameserver details. Those nameservers, in simple terms, connect your domain name to the actual server your site is hosted on
+
+5. MX record
+A mail exchange (MX) record, is a DNS record type that shows where emails for a domain should be routed to. In other words, an MX record makes it possible to direct emails to a mail server.
+Use of MX record :
+-----------------
+With an MX record, it's possible to hand off emails to a dedicated email server. For example, you can decide to leave all the trouble of setting up webmail on a server you own to a specialized email provider. This comes with many benefits, including custom email clients for reading and sending emails, and improved security and spam filters. Also, you can use a service like Site24x7 to monitor and verify issues with the mail server your MX records point to.
+CNAME—or, in full, "canonical name"—is a DNS record that points a domain name (an alias) to another domain. In a CNAME record, the alias doesn't point to an IP address. And the domain name that the alias points to is the canonical name. For example, the subdomain ng.example.com can point to example.com using CNAME. Here example.com points to the actual IP address using an A record.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # What is the role of the web server ?
 
-
+A web server is a computer system responsible for serving and delivering web content to users upon request.
+It uses HTTP (Hypertext Transfer Protocol) to communicate with web browsers, allowing them to send and display web pages, images, videos, and other files over the internet.
+The primary role of a web server is to store, process, and deliver web pages to clients, making it an essential component of any website. Some common web server software includes Apache, Nginx, and Microsoft IIS.
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-What is the role of the application server
-What is the role of the database
-What is the server using to communicate with the computer of the user requesting the website
+# What is the role of the application server ?
 
+An application server is a software platform that manages and executes web-based applications. 
+It provides an environment for analyzing requests, invoking business logic, and producing responses. 
+Its primary functions include connection pooling, transaction management, security, resource optimization, and caching. 
+Application servers can help organizations improve application performance, scalability, and reliability. They also simplify application deployment, management, and maintenance. Some examples of popular application servers include Tomcat, JBoss, WebLogic, and WebSphere.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-SPOF
-Downtime when maintenance needed (like deploying new code web server needs to be restarted)
-Cannot scale if too much incoming traffic
+# What is the role of the database ?
+
+Developers, and designers use databases to store and organize the data that their applications need. 
+The role of databases in web application development has increased over time. As a result, a number of developers create applications that use databases. 
+You can't fully understand web application development without understanding the role of databases. 
+A database is nothing but an organized collection of data that helps us, whether creating or modifying any program. Some examples of this kind of organization are the bookshelf, the NAS storage, and even databases on your desktop computers!
+
+The role of databases in a web application is very important. The web application interacts with the database to store data and retrieve data from it. The database is used to store all the information that the user needs to store. For example, if you are developing a shopping cart website then it will contain product details, customer details, order details, etc. In this case, you need to store this information in a database so that we can use them later on.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What is the server using to communicate with the computer of the user requesting the website ?
+
+When a user requests a website, their computer sends a request to the server using a protocol such as HTTP or HTTPS. The server then responds to the request by sending back the website's content using the same protocol.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# SPOF :
+------
+A single point of failure (SPOF) is a potential risk posed by a flaw in the design, implementation or configuration of a circuit or system. SPOF refers to one fault or malfunction that can cause an entire system to stop operating.
+
+Examples of single points of failure:
+
+Here are two examples of how a SPOF can manifest:
+
+Single server:
+---------------
+
+Consider a data center where one server runs a single application. The underlying server hardware would present a single point of failure for the application's availability. If the server failed, the application would become unstable or crash. This event would prevent users from accessing the application, and it could possibly result in data loss. The use of server clustering technology can mitigate this situation. It would allow a duplicate copy of the application to run on a second physical server. If the first server failed, the second would take over to preserve access to the application and avoid the SPOF.
+
+Lone network switch:
+---------------------
+
+Another SPOF example is where an array of servers is networked through a single network switch. If the switch failed or simply became disconnected from its power source, all of the servers connected to that switch would become inaccessible from the rest of the network. Here, the switch is a single point of failure. For a large switch, this could render dozens of servers and their workloads inaccessible. Redundant switches and network connections can provide alternative network paths for interconnected servers if the original switch should fail, avoiding the SPOF.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Downtime when maintenance needed (like deploying new code web server needs to be restarted) :
+
+Maintenance downtime is the scheduled time when a server or system is taken offline for maintenance and updates. It is essential to keep track of when maintenance downtime is needed to ensure the smooth functioning and reliability of single server infrastructure. Maintenance downtime should also be planned at a time that does not significantly impact productivity and business operations. It is recommended to schedule maintenance downtime during off-peak hours to minimize disruption to end-users.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Cannot scale if too much incoming traffic :
+
+If you are encountering issues with scaling a single server when handling high levels of incoming traffic, it may be necessary to consider implementing "load balancing" or "clustering". Load balancing distributes incoming traffic across multiple servers, effectively reducing the load on any one server. Clustering involves grouping multiple servers together to present a unified system that can handle more traffic than a single server.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
