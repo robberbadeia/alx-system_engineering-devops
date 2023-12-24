@@ -1,0 +1,50 @@
+# For every additional element, why you are adding it
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What distribution algorithm your load balancer is configured with and how it works
+
+A load balancer is a software or hardware device that keeps any one server from becoming overloaded. A load balancing algorithm is the logic that a load balancer uses to distribute network traffic between servers (an algorithm is a set of predefined rules).
+
+Dynamic load balancing algorithms:
+----------------------------------
+
+1- Least connection load balancing method: 
+
+Checks which servers have the fewest connections open at the time and sends traffic to those servers. This assumes all connections require roughly equal processing power.
+
+2- Weighted least connection load balancing method: Gives administrators the ability to assign different weights to each server, assuming that some servers can handle more connections than others.
+
+3- Weighted response time load balancing method: Averages the response time of each server, and combines that with the number of connections each server has open to determine where to send traffic. By sending traffic to the servers with the quickest response time, the algorithm ensures faster service for users.
+
+4- Resource-based: Distributes load based on what resources each server has available at the time. Specialized software (called an "agent") running on each server measures that server's available CPU and memory, and the load balancer queries the agent before distributing traffic to that server.
+
+Static load balancing algorithms:
+---------------------------------
+
+1- Round robin: Round robin load balancing distributes traffic to a list of servers in rotation using the Domain Name System (DNS). An authoritative nameserver will have a list of different A records for a domain and provides a different one in response to each DNS query.
+
+2- Weighted round robin: Allows an administrator to assign different weights to each server. Servers deemed able to handle more traffic will receive slightly more. Weighting can be configured within DNS records.
+
+3- IP hash: Combines incoming traffic's source and destination IP addresses and uses a mathematical function to convert it into a hash. Based on the hash, the connection is assigned to a specific server.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+
+Active-Active High Availability Cluster:
+----------------------------------------
+An active-active cluster is typically made up of at least two nodes, both actively running the same kind of service simultaneously. The main purpose of an active-active cluster is to achieve load balancing. Load balancing distributes workloads across all nodes in order to prevent any single node from getting overloaded. Because there are more nodes available to serve, there will also be a marked improvement in throughput and response times
+
+The set up below, which consists of a load balancer and two HTTP servers (ex. two nodes), is an example of this type of HA cluster configuration. Instead of connecting directly to an HTTP server, web clients go through the load balancer, which in turn connects each client to any of the HTTP servers behind it.
+
+Active-Passive High Availability Cluster:
+-----------------------------------------
+Like the active-active cluster configuration, an active-passive cluster also consists of at least two nodes. However, as the name "active-passive" implies, not all nodes are going to be active. In the case of two nodes, for example, if the first node is already active, the second node must be passive or on standby.
+
+The passive (failover) server serves as a backup that's ready to take over as soon as the active (primary) server gets disconnected or is unable to serve, an active-passive failover for when a node fails.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# How a database Primary-Replica (Master-Slave) cluster works
+# What is the difference between the Primary node and the Replica node in regard to the application
