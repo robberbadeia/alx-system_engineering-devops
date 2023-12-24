@@ -23,4 +23,4 @@ MySQL Master-Slave Replication :
 
 # 2-secured_and_monitored_web_infrastructure
 
-![alt text](https://i.imgur.com/x2wD79H.jpg)
+![alt text](https://i.imgur.com/Gv0Dndm.jpg)
