@@ -16,3 +16,7 @@ Project :
 # Active-Passive High Availability Cluster :
 
 ![alt text](https://i.imgur.com/pPQmGn3.jpg)
+
+# MySQL Master-Slave Replication :
+
+![alt text]([Imgur](https://i.imgur.com/jGGCrWQ.png))

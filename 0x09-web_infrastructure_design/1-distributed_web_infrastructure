@@ -1,8 +1,4 @@
-# For every additional element, why you are adding it
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# What distribution algorithm your load balancer is configured with and how it works
+# What distribution algorithm your load balancer is configured with and how it works ?
 
 A load balancer is a software or hardware device that keeps any one server from becoming overloaded. A load balancing algorithm is the logic that a load balancer uses to distribute network traffic between servers (an algorithm is a set of predefined rules).
 
@@ -30,7 +26,7 @@ Static load balancing algorithms:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+# Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both ?
 
 Active-Active High Availability Cluster:
 ----------------------------------------
@@ -46,5 +42,12 @@ The passive (failover) server serves as a backup that's ready to take over as so
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# How a database Primary-Replica (Master-Slave) cluster works
-# What is the difference between the Primary node and the Replica node in regard to the application
+# How a database Primary-Replica (Master-Slave) cluster works ?
+
+A Primary-Replica cluster is a type of database replication topology in which there is a primary node (also known as the master) and one or more secondary nodes (also known as slaves). In this topology, data is written only to the primary node, which then replicates the changes to the secondary nodes using a process called propagation. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# What is the difference between the Primary node and the Replica node in regard to the application ?
+
+This design is commonly used in master-slave systems, where one node is responsible for accepting all write operations while the others simply replicate those changes. The advantage of this approach is its simplicity and scalability, as new replicas can be easily added or removed. However, it can also be less flexible in terms of read operations, as all read queries must be directed to a
