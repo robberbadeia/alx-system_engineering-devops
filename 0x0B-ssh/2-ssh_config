@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# configure it to our needs so that you can connect to a server
+Host 98.98.98.98
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
