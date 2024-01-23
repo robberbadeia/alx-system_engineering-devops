@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# ufw allow 'Nginx HTTP : This command will permit incoming connections on port 80,
+# allowing your Nginx server to receive HTTP requests and serve web content.
+apt-get update
+spt-get install -y nginx
+echo "Hello world" > /var/www/html/index.html
+ufw allow 'Nginx HTTP
+service nginx start
