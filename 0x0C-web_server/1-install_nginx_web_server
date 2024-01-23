@@ -3,8 +3,8 @@
 # allowing your Nginx server to receive HTTP requests and serve web content.
 sudo apt-get update
 sudo apt-get install -y nginx
-suo chown -R "$USER":"$USER" /var/www/html
-suo chown -R 755 /var/www/html
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chown -R 755 /var/www/html
 sudo echo "Hello world" > /var/www/html/index.html
 sudo ufw allow 'Nginx HTTP'
 sudo service nginx start
