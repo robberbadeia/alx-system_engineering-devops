@@ -1,2 +1,19 @@
 #!/usr/bin/env bash
 # Task 01
+
+apt-get update
+apt-get install -y haproxy
+echo "
+frontend hbnb-lb_front
+        bind *:80
+        mode http
+        default_backend hbnb-lb_back
+backend hbnb-lb_back
+        balance roundrobin
+        server 477224-web-01 54.209.213.196:80 check
+        server 477224-web-02 18.209.223.89:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+service haproxy start
