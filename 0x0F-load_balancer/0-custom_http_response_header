@@ -7,7 +7,7 @@ touch /var/www/html/index.html /var/www/html/404.html
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-printf %s "server {
+echo "server {
     listen 80;
     listen [::]:80 default_server;
     root /var/www/html;
