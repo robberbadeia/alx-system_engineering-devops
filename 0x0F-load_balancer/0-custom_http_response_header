@@ -6,6 +6,7 @@ apt-get install -y nginx
 touch /var/www/html/index.html /var/www/html/404.html
 echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo ufw allow 'Nginx HTTP'
 
 echo "server {
     listen 80;
