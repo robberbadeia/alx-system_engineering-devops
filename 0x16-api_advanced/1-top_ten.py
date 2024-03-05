@@ -9,28 +9,23 @@ def top_ten(subreddit):
     """
     Function Imo=plementation
     """
-    u_agent = 'Mozilla/5.0'
-
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {
-        'User-Agent': u_agent
-    }
+        "User-Agent": "python:reddit.top.ten:v1.0 (by /u/RobbairBadeia)"}
 
-    params = {
-        'limit': 10
-    }
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    res = requests.get(url,
-                       headers=headers,
-                       params=params,
-                       allow_redirects=False)
-    if res.status_code != 200:
+    # Check for invalid subreddit
+    # status code 302 for redirect or 404 for not found
+    if response.status_code in [302, 404]:
         print(None)
         return
-    dic = res.json()
-    hot_posts = dic['data']['children']
-    if len(hot_posts) is 0:
+
+    data = response.json()
+    posts = data.get("data", {}).get("children", [])
+
+    if not posts:
         print(None)
     else:
-        for post in hot_posts:
-            print(post['data']['title'])
+        for post in posts:
+            print(post["data"]["title"])
