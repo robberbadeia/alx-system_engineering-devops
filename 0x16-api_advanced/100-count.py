@@ -2,8 +2,8 @@
 """
 100-count
 """
-from collections import defaultdict
 import requests
+from collections import defaultdict
 
 
 def count_words(subreddit, word_list, after='', counts=None):
