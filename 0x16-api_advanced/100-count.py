@@ -4,8 +4,8 @@
 """
 
 
-import requests
 from collections import defaultdict
+import requests
 
 
 def count_words(subreddit, word_list, after='', counts=None):
