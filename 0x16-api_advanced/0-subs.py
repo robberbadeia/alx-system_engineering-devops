@@ -12,27 +12,40 @@ def number_of_subscribers(subreddit):
     """
     client_id = 'xnDxd-7qr-aFwHQ7_k-kKw'
     client_secret = '4KVZ5lw12yu3KYQZ8ytXZb0ejaShQQ'
-    user_agent = 'Chrome/122.0.6261.95'
+    reddit_username = 'RobbairBadeia'
+    reddit_password = 'Godislove'
 
-    auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
-    headers = {'User-Agent': user_agent}
-    data = {'grant_type': 'password',
-            'username': 'RobbairBadeia',
-            'password': 'Godislove'}
     auth_url = 'https://www.reddit.com/api/v1/access_token'
 
-    # Get OAuth token
-    token_response = requests.post(auth_url,
-                                   auth=auth,
-                                   data=data,
-                                   headers=headers)
-    token = token_response.json().get('access_token')
+    auth_data = {'grant_type': 'password',
+                 'username': reddit_username,
+                 'password': reddit_password}
 
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'Authorization': f'Bearer {token}', 'User-Agent': user_agent}
+    # HTTP basic authentication header with client ID and secret
+    auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
 
-    res = requests.get(url, headers=headers, allow_redirects=False)
-    if res.status_code != 200:
-        return 0
-    results = res.json().get('data')
-    return results.get('subscribers')
+    # Make a POST request to obtain access token
+    response = requests.post(auth_url,
+                             data=auth_data,
+                             auth=auth,
+                             headers={
+                                 'User-Agent': 'Script by /u/RobbairBadeia'})
+
+    if response.status_code == 200:
+        access_token = response.json()['access_token']
+
+    # Reddit API endpoint for getting subreddit info
+    subreddit_url = f'https://oauth.reddit.com/r/{subreddit}/about.json'
+
+    # Include access token in request headers
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'User-Agent': 'Script by /u/RobbairBadeia'
+    }
+
+    # Make a GET request to fetch subreddit info
+    res = requests.get(subreddit_url, headers=headers, allow_redirects=False)
+    if res.status_code == 200:
+        results = res.json().get('data')
+        return results.get('subscribers')
+    return 0
