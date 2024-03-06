@@ -16,12 +16,16 @@ def number_of_subscribers(subreddit):
 
     auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
     headers = {'User-Agent': user_agent}
-    data = {'grant_type': 'password', 'username': 'RobbairBadeia', 'password': 'Godislove'}
+    data = {'grant_type': 'password',
+            'username': 'RobbairBadeia',
+            'password': 'Godislove'}
     auth_url = 'https://www.reddit.com/api/v1/access_token'
 
-
     # Get OAuth token
-    token_response = requests.post(auth_url, auth=auth, data=data, headers=headers)
+    token_response = requests.post(auth_url,
+                                   auth=auth,
+                                   data=data,
+                                   headers=headers)
     token = token_response.json().get('access_token')
 
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
