@@ -2,8 +2,6 @@
 """
 100-count
 """
-
-
 from collections import defaultdict
 import requests
 
